@@ -26,8 +26,8 @@ jobs:
       run: mvn -B package --file pom.xml
     - uses: raccoondev/push-docker-gcr
       with:
-        gcr_host: eu.gcr.io
-        image_name: my_image
+        gcr_host: gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/messageutil
+        image_name: messageutil
         image_tag: latest
         env:
         GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
