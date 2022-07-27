@@ -24,7 +24,7 @@ jobs:
         cache: maven
     - name: Build with Maven
       run: mvn -B package --file pom.xml
-    - uses: raccoondev/push-docker-gcr@latest
+    - uses: raccoondev/push-docker-gcr@v1
       with:
         gcr_host: gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/messageutil
         image_name: messageutil
