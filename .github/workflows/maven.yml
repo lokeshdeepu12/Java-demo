@@ -35,7 +35,7 @@ jobs:
     - name: Push to Artifact registry  
       uses: par-tec/docker-push-gar-image@v0.0.3
       with:
-        image_name: message-util
+        image_name: messageutil
         image_tag: v1.0.0
         docker_context: ./
         gar_hostname: us-docker.pkg.dev
