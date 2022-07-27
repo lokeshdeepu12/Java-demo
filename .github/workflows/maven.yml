@@ -28,7 +28,7 @@ jobs:
       with:
         gcr_host: gcr.io/${{ secrets.GOOGLE_PROJECT_ID }}/messageutil
         image_name: messageutil
-        image_tag: latest
+        image_tag: $TAG
       env:
           GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
           GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
