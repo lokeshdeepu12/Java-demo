@@ -32,3 +32,15 @@ jobs:
       env:
           GCLOUD_SERVICE_KEY: ${{ secrets.GCLOUD_SERVICE_KEY }}
           GOOGLE_PROJECT_ID: ${{ secrets.GOOGLE_PROJECT_ID }}
+    - name: Push to Artifact registry  
+      uses: par-tec/docker-push-gar-image@latest
+      with:
+        image_name: messageutil
+        image_tag: v1.0.0
+        docker_context: ./
+        gar_hostname: us-docker.pkg.dev
+        gar_project: ${{ secrets.GOOGLE_PROJECT_ID }}
+        gar_service_account: ${{ secrets.GCLOUD_SERVICE_KEY }}
+        tag_latest_version: true      
+          
+          
